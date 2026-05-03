@@ -79,9 +79,9 @@ const AddBlog = () => {
   return (
     <form
       onSubmit={onSubmitHandler}
-      className="flex-1 bg-blue-50/50 text-gray-600 h-full overflow-scroll"
+      className="flex-1 bg-blue-50/50 text-gray-600 dark:text-gray-200 h-full overflow-scroll"
     >
-      <div className="bg-white w-full max-w-3xl p-4 md:p-10 sm:m-10 shadow rounded">
+      <div className="bg-white dark:bg-gray-600 w-full max-w-3xl p-4 md:p-10 sm:m-10 shadow rounded">
         <p>Upload thumbnail</p>
         <label htmlFor="image">
           <img
@@ -122,7 +122,7 @@ const AddBlog = () => {
         <div className="max-w-lg h-74 pb-16 sm:pb-10 pt-2 relative">
           <div
             ref={editorRef}
-            className="h-60 bg-white border border-gray-300 rounded mb-2"
+            className="h-60 bg-white dark:bg-gray-600 border border-gray-300 rounded mb-2"
           ></div>
           {loading && (
             <div className="absolute right-0 top-0 bottom-0 left-0 flex items-center justify-center bg-black/10 mt-2">

@@ -3,6 +3,7 @@ import { assets } from "../../assets/assets";
 import { Outlet } from "react-router-dom";
 import Sidebar from "../../components/admin/Sidebar";
 import { useAppContext } from "../../context/AppContext";
+import ThemeToggle from "../../components/ThemeToggle ";
 
 const Layout = () => {
   const { axios, setToken, navigate } = useAppContext();
@@ -20,15 +21,18 @@ const Layout = () => {
         <img
           src={assets.logo}
           alt=""
-          className="w-32 sm:w-40 cursor-pointer"
+          className="w-32 sm:w-40 cursor-pointer dark:bg-white dark:rounded-lg"
           onClick={() => navigate("/")}
         />
-        <button
-          onClick={logout}
-          className="flex items-center gap-2 rounded-full text-sm cursor-pointer bg-primary text-white px-10 py-2.5"
-        >
-          Logout
-        </button>
+        <div className="flex gap-8">
+          <ThemeToggle />
+          <button
+            onClick={logout}
+            className="flex items-center gap-2 rounded-full text-sm cursor-pointer bg-primary text-white px-10 py-2.5"
+          >
+            Logout
+          </button>
+        </div>
       </div>
 
       <div className="flex h-[calc(100vh-70px)]">
